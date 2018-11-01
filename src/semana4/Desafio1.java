@@ -19,22 +19,7 @@ package semana4;
  *  mostre os metodos em execuÃ§Ã£o
  */
 public class Desafio1{
-    public static void main(String[] args) {
-    	Produto prod1=new Produto();
-    	prod1.setId();
-    	prod1.setNome("Secador de Cabelo");
-    	prod1.setMarca("Taiff");
-    	prod1.setCor("Preto");
-    	prod1.setTamanho(25);
-    	
-    	Produto prod2=new Produto();
-    	prod2.setId();
-    	prod2.setNome("Balcão de Padaria");
-    	prod2.setMarca("Genérico");
-    	prod2.setCor("azul");
-    	prod2.setTamanho(75);
-    }
-    
-
-    }
+	public static void main(String[] args) {
+		Estoque.add("Secador de Cabelo", "Taiff", "Preto", 25, 7);
+	}
 }
