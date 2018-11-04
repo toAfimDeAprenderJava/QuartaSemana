@@ -20,6 +20,7 @@ package semana4;
  */
 public class Desafio1{
 	public static void main(String[] args) {
-		Estoque.add("Secador de Cabelo", "Taiff", "Preto", 25, 7);
+		Estoque estoque=new Estoque();
+		estoque.add("Secador de Cabelo", "Taiff", "Preto", 25, 7);
 	}
 }
