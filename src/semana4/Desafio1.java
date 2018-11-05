@@ -20,7 +20,7 @@ package semana4;
  */
 public class Desafio1{
 	public static void main(String[] args) {
-		Estoque estoque=new Estoque();
+		Estoque estoque=new Estoque(2);
 		//para adicionar produtos passe nome, marca, cor, tamanho e quantidade
 		estoque.add("Secador de Cabelo", "Taiff", "Preto", 25, 7);
 		estoque.add("Balcão de Padaria", "Genérico", "amarelo", 75, 2);

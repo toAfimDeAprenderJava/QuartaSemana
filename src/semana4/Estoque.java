@@ -1,8 +1,13 @@
 package semana4;
 
 class Estoque {
+	protected Estoque (int capacidade) {
+		this.capacidade=capacidade;
+	}
+
 	int id=0;
-	Produto[] prod=new Produto[2];
+	System.out.println(this.capacidade);
+	Produto[] prod=new Produto[(this.capacidade)];
 
 	protected void add(String nome, String marca, String cor, int tamanho, int quantidade) {
 	++id;
@@ -21,5 +26,5 @@ protected void lista() {
 		System.out.println(prod[(i)].getNome() + " " + prod[(i)].getMarca() + ", cor " + prod[(i)].getCor());
 		System.out.println("Quantidade: " + prod[(i)].getQuantidade());
 	}
-	}
+}
 }
