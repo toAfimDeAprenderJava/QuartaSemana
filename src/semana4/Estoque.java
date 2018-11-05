@@ -2,7 +2,7 @@ package semana4;
 
 class Estoque {
 	int id=0;
-	Produto[] prod=new Produto[]; 
+	Produto[] prod=new Produto[100]; 
 
 	protected void add(String nome, String marca, String cor, int tamanho, int quantidade) {
 		++id;

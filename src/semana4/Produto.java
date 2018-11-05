@@ -41,7 +41,7 @@ public class Produto {
 	}
 	protected void setTamanho(int tamanho) {
 		if(tamanho>60) {
-			System.error.println("Não há espaço para produtos deste tamanho em nosso estoque.");
+			System.err.println("Não há espaço para produtos deste tamanho em nosso estoque.");
 		}
 		else this.tamanho=tamanho;
 	}
