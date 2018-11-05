@@ -40,10 +40,7 @@ public class Produto {
 		this.cor=cor;
 	}
 	protected void setTamanho(int tamanho) {
-		if(tamanho>60) {
-			System.err.println("Não há espaço para produtos deste tamanho em nosso estoque.");
-		}
-		else this.tamanho=tamanho;
+		this.tamanho=tamanho;
 	}
 	protected void setQuantidade(int quantidade) {
 		this.quantidade=quantidade;
