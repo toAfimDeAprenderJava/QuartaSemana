@@ -2,7 +2,7 @@ package semana4;
 
 import java.util.Scanner;
 class Funcionario {
-	private int id=0; //só vai ser útil na hora do remove, no resto a quando ele se referencia ao funcionário já é através do id (posição na array de funcionários)
+	private int id=0;
 	private String nome;
 	private String departamento;
 	private double salario;
