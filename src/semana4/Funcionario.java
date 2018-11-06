@@ -2,11 +2,16 @@ package semana4;
 
 import java.util.Scanner;
 class Funcionario {
+	private int id=0; //só vai ser útil na hora do remove, no resto a quando ele se referencia ao funcionário já é através do id (posição na array de funcionários)
 	private String nome;
 	private String departamento;
 	private double salario;
 	private int horasATrabalhar;
 
+	Funcionario[] func=new Funcionario[2];
+	protected int getId() {
+		return this.id;
+	}
 protected String getNome() {
 		return this.nome;
 }
@@ -19,20 +24,24 @@ protected double getSalario(){
 protected int getHorasATrabalhar() {
 	return this.horasATrabalhar;
 }
-protected void setNome(String nome) {
-	this.nome=nome;
-}
-protected void setDepartamento(String departamento) {
-	this.departamento=departamento;
-}
-protected void setSalario(double salario) {
-	this.salario=salario;
-}
-protected void setHorasATrabalhar(int horasATrabalhar) {
-	this.horasATrabalhar=horasATrabalhar;
-}
+	protected void setId(int id) {
+		this.id=id;
+	}
+	protected void setNome(String nome) {
+		this.nome=nome;
+	}
+	protected void setDepartamento(String departamento) {
+		this.departamento=departamento;
+	}
+	protected void setSalario(double salario) {
+		this.salario=salario;
+	}
+	protected void setHorasATrabalhar(int horasATrabalhar) {
+		this.horasATrabalhar=horasATrabalhar;
+	}
 
 protected void edita() {
+	System.out.println("Editando");
 	Scanner sc=new Scanner(System.in);
 	System.out.println("Nome: " + this.getNome());
 	if(mantem()==false) {
@@ -58,7 +67,11 @@ protected void edita() {
 		this.setHorasATrabalhar(Integer.parseInt(sc.nextLine()));
 		System.out.println("Agora funcionário deverá trabalhar " + this.getHorasATrabalhar() + ".");
 	}
-}
+	}
+	protected void remove() {
+		System.out.println("Tchau, " + this.getNome());
+			func[(id-1)]=null;
+	}
 	protected boolean mantem() {
 		System.out.println("Mantenho?");
 		Scanner scx=new Scanner(System.in);
@@ -66,4 +79,22 @@ protected void edita() {
 		if(opc.equals("s")) return true;
 		else return false;
 }
+
+	protected Funcionario() { }
+protected Funcionario (String nome, String departamento, double salario, int horasATrabalhar) {
+	id=this.getId()+1;
+	func[(id-1)]=new Funcionario();
+	//seta instancia corrente (util para diminuir digitação mais pra frente)
+	this.setNome(nome);
+	this.setDepartamento(departamento);
+	this.setSalario(salario);
+	this.setHorasATrabalhar(horasATrabalhar);
+	//Seta na array de funcionários
+	func[(id-1)].setId(id);
+	func[(id-1)].setNome(nome);
+	func[(id-1)].setDepartamento(departamento);
+	func[(id-1)].setSalario(salario);
+	func[(id-1)].setHorasATrabalhar(horasATrabalhar);
+		System.out.println("Boas vindas são dadas ao novo funcionário " + this.getId() + ", nomeado " + this.getNome());
+	}
 }
